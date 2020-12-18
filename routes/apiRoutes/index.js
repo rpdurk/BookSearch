@@ -1,7 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
-const bookRoutes = require("./bookRoutes");
-const googleRoutes = require("./googleRoutes");
+const bookRoutes = require("./bookRoutes.js");
+const googleRoutes = require("./googleRoutes.js");
 
 // Book routes
 router.use("/books", bookRoutes);
