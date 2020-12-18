@@ -55,4 +55,5 @@ module.exports = {
         console.log('L:55 BookController', e);
         res.status(401).json(e)
       }
+  }
 };

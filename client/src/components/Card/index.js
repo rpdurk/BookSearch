@@ -1,3 +1,4 @@
+import React from "react";
 // pass in the title, icon and children into the cards to populate
 function Card({ icon, title, children }) {
   return (
