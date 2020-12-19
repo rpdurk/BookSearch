@@ -5,9 +5,9 @@ const db = require("../models");
 module.exports = {
 
 //   add a book to the db
-  create: async (req, res) => {
+  create: (req, res) => {
     try {
-    const addBook = await db.Book.create(req.body)
+     db.Book.create(req.body)
       .then(dbBook => res.json(dbBook))
     } catch (e) {
         console.log('L:13 BookController', e);
@@ -15,9 +15,9 @@ module.exports = {
       }
   },
     // find all books
-  findAll: async (req, res) => {
+  findAll: (req, res) => {
     try {
-    const findBooks = await db.Book.find(req.query)
+    db.Book.find(req.query)
       .then(dbBook => res.json(dbBook))
     } catch (e) {
         console.log('L:23 BookController', e);
@@ -25,9 +25,9 @@ module.exports = {
       }
   },
 //   find all books by their id
-  findById: async (req, res) => {
+  findById: (req, res) => {
     try {
-    const findBookById = await db.Book.findById(req.params.id)
+    db.Book.findById(req.params.id)
       .then(dbBook => res.json(dbBook))
     } catch (e) {
         console.log('L:33 BookController', e);
@@ -36,9 +36,9 @@ module.exports = {
   },
 
 // update a book from their db
-  updateBook: async (req, res) => {
+  updateBook: (req, res) => {
     try {
-    const updateBook = await db.Book.findOneAndUpdate({ id: req.params.id }, req.body)
+    db.Book.findOneAndUpdate({ id: req.params.id }, req.body)
       .then(dbBook => res.json(dbBook))
     } catch (e) {
         console.log('L:44 BookController', e);
@@ -46,9 +46,9 @@ module.exports = {
       }
   },
 // delete book from their db
-  remove: async (req, res) => {
+  remove: (req, res) => {
     try {
-    const updateBook = await db.Book.findById(req.params.id)
+    db.Book.findById(req.params.id)
       .then(dbBook => dbBook.remove())
       .then(dbBook => res.json(dbBook))
     } catch (e) {
