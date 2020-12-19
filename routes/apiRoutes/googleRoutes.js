@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const googleController = require("../../controllers/googleSearchController");
+const googleSearchController = require("../../controllers/googleSearchController");
 
 // actual route = "/api/google"
 router
   .route("/")
-  .get(googleController.findAll);
+  .get(googleSearchController.findAll);
 
 module.exports = router;
